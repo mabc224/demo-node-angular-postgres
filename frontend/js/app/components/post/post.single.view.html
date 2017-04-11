@@ -1,0 +1,28 @@
+<div class="row">
+	<a ng-href="#!/logout" class="btn btn-warning pull-right"> Logout</a> <!--Need to work-->
+	<div class="col-md-4">
+
+		<h1>Add Post Code</h1>
+		<hr>
+		<br>
+		<form ng-submit="postSingleCtrl.onAdd()">
+			<div class="form-group">
+				<label for="title">Title</label>
+				<input type="text" class="form-control" id="title" placeholder="Title" ng-model="postSingleCtrl.post.title" readonly="">
+			</div>
+			<div class="form-group">
+				<label for="body">Body</label>
+				<textarea class="form-control" rows="10" id="body" ng-model="postSingleCtrl.post.body" readonly=""></textarea>
+			</div>
+
+			<div id="map_canvas">
+				<ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
+					<ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
+					</ui-gmap-marker>
+				</ui-gmap-google-map>
+			</div>
+
+			<a ng-click="postSingleCtrl.onGo()" class="btn btn-default"> View all Posts</a>
+		</form>
+	</div>
+</div>

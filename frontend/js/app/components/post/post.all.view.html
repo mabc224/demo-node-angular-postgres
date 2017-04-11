@@ -1,0 +1,42 @@
+<div class="row">
+	<a ng-href="#!/logout" class="btn btn-warning pull-right"> Logout</a> <!--Need to work-->
+	<div class="col-md-12">
+		<a ng-click="postAllCtrl.onGo()" class="btn btn-success"> Create a new post</a>
+
+		<br>
+		<br>
+		<table class="table table-condensed table-hover">
+			<thead>
+			<tr>
+				<th>Id</th>
+				<th>Title</th>
+				<th>Body</th>
+				<th>Lat</th>
+				<th>Lng</th>
+				<th>By User</th>
+				<th>Delete Post</th>
+			</tr>
+			</thead>
+			<tbody>
+
+			<tr ng-repeat="post in posts">
+				<td><a ng-href="#!/posts/{{ post.id }}"> {{ post.id }}</a></td>
+				<td>{{ post.title }}</td>
+				<td>{{ post.body }}</td>
+				<td>{{ post.lat }}</td>
+				<td>{{ post.lng }}</td>
+				<td>{{ post.username }}</td>
+				<td><button class="btn btn-danger" ng-click="postAllCtrl.deletePost(post.id)"><span class="glyphicon glyphicon-trash"></span></button></td>
+			</tr>
+			</tbody>
+		</table>
+
+		<div id="map_canvas">
+			<ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options" bounds="map.bounds">
+				<ui-gmap-markers models="postsMarkers" coords="'self'" icon="'icon'">
+				</ui-gmap-markers>
+			</ui-gmap-google-map>
+		</div>
+
+	</div>
+</div>

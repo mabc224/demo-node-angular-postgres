@@ -1,0 +1,15 @@
+<div class="row">
+	<div class="col-md-4">
+		<h1>Login Code</h1>
+		<hr>
+		<br>
+		<form ng-submit="authLoginCodeCtrl.onLoginCode()" novalidate>
+			<div class="form-group">
+				<label for="code">Username</label>
+				<input type="text" class="form-control" id="code" placeholder="enter code"
+					   ng-model="authLoginCodeCtrl.user.code" required>
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,36 @@
+<div class="row">
+	<div class="col-md-4">
+		<h1>Login</h1>
+		<hr>
+		<br>
+		<form ng-submit="authLoginCtrl.onLogin()" novalidate>
+			<div class="form-group">
+				<label for="username">Username</label>
+				<input type="text" class="form-control" id="username" placeholder="enter username"
+					   ng-model="authLoginCtrl.user.username" required>
+			</div>
+			<div class="form-group">
+				<label for="phone">Phone/Mobile #</label>
+				<input type="text" class="form-control" id="phone" placeholder="enter phone"
+					   ng-model="authLoginCtrl.user.phone" required>
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+			<a ng-click="authLoginCtrl.onGo()" class="btn btn-default"><span class="glyphicon glyphicon-user"></span> Register</a>
+		</form>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-4">
+		<h2>Authenticator Code</h2>
+		<hr>
+		<br>
+		<form ng-submit="authLoginCtrl.onVerifyLogin()" novalidate>
+			<div class="form-group">
+				<label for="verify_phone">Verification Code</label>
+				<input type="text" class="form-control" id="verify_phone" placeholder="enter phone"
+					   ng-model="authLoginCtrl.code.verify_phone" required>
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+</div>
